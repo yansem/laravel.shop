@@ -12,7 +12,7 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request, Category $category)
     {
         $data = $request->validated();
-        $category->update();
+        $category->update($data);
         return redirect()->route('category.index');
     }
 }

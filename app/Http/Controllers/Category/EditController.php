@@ -10,6 +10,6 @@ class EditController extends Controller
 {
     public function __invoke(Category $category)
     {
-        return view('category.show', compact('category'));
+        return view('category.edit', compact('category'));
     }
 }
