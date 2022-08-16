@@ -10,7 +10,7 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        Tag::firstOrCreate($data);
+        Tag::create($data);
         return redirect()->route('tag.index');
     }
 }
