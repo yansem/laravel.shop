@@ -56,6 +56,10 @@
                                         <td>{{ $product->price }}</td>
                                     </tr>
                                     <tr>
+                                        <td>Old price</td>
+                                        <td>{{ $product->old_price }}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Count</td>
                                         <td>{{ $product->count }}</td>
                                     </tr>

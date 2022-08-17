@@ -46,6 +46,12 @@
                             }}">
                         </div>
                         <div class="form-group">
+                            <input type="text" placeholder="old_price" name="old_price" class="form-control mb-2" value="{{
+                             old
+                            ('old_price')
+                            }}">
+                        </div>
+                        <div class="form-group">
                             <input type="number" placeholder="count" name="count" class="form-control mb-2">
                         </div>
                         <div class="form-group">

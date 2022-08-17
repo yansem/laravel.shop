@@ -34,6 +34,7 @@
                                     <th>Description</th>
                                     <th>Content</th>
                                     <th>Price</th>
+                                    <th>Old price</th>
                                     <th>Preview image</th>
                                     <th>Count</th>
                                     <th>Is published</th>
@@ -48,6 +49,7 @@
                                         <td>{{ $product->description }}</td>
                                         <td>{{ $product->content }}</td>
                                         <td>{{ $product->price }}</td>
+                                        <td>{{ $product->old_price }}</td>
                                         <td>{{ $product->preview_image }}</td>
                                         <td>{{ $product->count }}</td>
                                         <td>{{ $product->is_published }}</td>
