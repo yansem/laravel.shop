@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <!-- Content Header (Page header) -->
+    <!-- Content Header (Pcount header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -27,42 +27,63 @@
                         @csrf
                         @method('patch')
                         <div class="form-group">
-                            <input type="text" placeholder="Name" name="name" class="form-control mb-2" value="{{ old
-                            ('name', $product->name)
+                            <input type="text" placeholder="title" name="title" class="form-control mb-2" value="{{ old
+                            ('title', $product->title)
                             }}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Surname" name="surname" class="form-control mb-2" value="{{ old
-                            ('surname', $product->surname)
+                            <input type="text" placeholder="description" name="description" class="form-control mb-2" value="{{ old
+                            ('description', $product->description)
                             }}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Patronymic" name="patronymic" class="form-control mb-2" value="{{ old
-                            ('patronymic', $product->patronymic)
+                            <textarea name="content" placeholder="content" class="form-control mb-2" cols="30"
+                                      rows="10">{{ old('content', $product->content)}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="price" name="price" class="form-control mb-2" value="{{ old
+                            ('price', $product->price)
                             }}">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" name="email" class="form-control mb-2" value="{{ old
-                            ('email', $product->email)
+                            <input type="number" placeholder="count" name="count" class="form-control mb-2" value="{{ old
+                            ('count', $product->count)
                             }}">
                         </div>
                         <div class="form-group">
-                            <input type="number" placeholder="Age" name="age" class="form-control mb-2" value="{{ old
-                            ('age', $product->age)
-                            }}">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Address" name="address" class="form-control mb-2" value="{{ old
-                            ('address', $product->address)
-                            }}">
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" name="gender">
-                                <option disabled selected>Gender</option>
-                                <option {{ $product->gender == 1 ? 'selected' : '' }} value="1">Мужской</option>
-                                <option {{ $product->gender == 2 ? 'selected' : '' }} value="2">Женский</option>
+                            <label>Category</label>
+                            <select class="form-control" name="category_id">
+                                <option disabled selected>Select a Category</option>
+                                @foreach($categories as $category)
+                                    <option {{ $category->id == $product->category->id ? 'selected' : '' }}
+                                            value="{{ $category->id }}">{{ $category->title }}</option>
+                                @endforeach
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <select class="tags" multiple="multiple" data-placeholder="Select a Tags"
+                                    style="width: 100%;" name="tags[]">
+                                @foreach($tags as $tag)
+                                    <option value="{{ $tag->id }}"
+                                        {{ $product->tags->pluck('id')->contains($tag->id) ? 'selected' : '' }}
+                                    >{{
+                                    $tag->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Colors</label>
+                            <select class="colors" multiple="multiple" data-placeholder="Select a Colors"
+                                    style="width: 100%;" name="colors[]">
+                                @foreach($colors as $color)
+                                    <option value="{{ $color->id }}" {{ $product->colors->pluck('id')->contains
+                                    ($color->id) ? 'selected' : '' }}
+                                    >{{ $color->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <input type="submit" class="btn btn-success" value="Update">
                     </form>
                 </div>

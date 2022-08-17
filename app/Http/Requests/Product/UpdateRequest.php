@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Tag;
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,7 +24,15 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|unique:tag,title'
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'content' => 'required|string',
+            'price' => 'required|integer',
+            'count' => 'required|integer',
+            'preview_image' => 'nullable|file',
+            'category_id' => 'nullable|integer',
+            'tags' => 'nullable|array',
+            'colors' => 'nullable|array',
         ];
     }
 }

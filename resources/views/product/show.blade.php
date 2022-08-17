@@ -40,32 +40,44 @@
                                         <td>{{ $product->id }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Name</td>
-                                        <td>{{ $product->name }}</td>
+                                        <td>Title</td>
+                                        <td>{{ $product->title }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Surname</td>
-                                        <td>{{ $product->surname }}</td>
+                                        <td>Decription</td>
+                                        <td>{{ $product->description }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Patronymic</td>
-                                        <td>{{ $product->petronymic }}</td>
+                                        <td>Content</td>
+                                        <td>{{ $product->content }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Email</td>
-                                        <td>{{ $product->email }}</td>
+                                        <td>Price</td>
+                                        <td>{{ $product->price }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Address</td>
-                                        <td>{{ $product->address }}</td>
+                                        <td>Count</td>
+                                        <td>{{ $product->count }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Gender</td>
-                                        <td>{{ $product->genderTitle }}</td>
+                                        <td>Preview image</td>
+                                        <td>{{ $product->preview_image }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Age</td>
-                                        <td>{{ $product->age }}</td>
+                                        <td>Is published</td>
+                                        <td>{{ $product->is_published }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category</td>
+                                        <td>{{ $product->category }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tags</td>
+                                        <td>{{ $product->tags }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Colors</td>
+                                        <td>{{ $product->colors }}</td>
                                     </tr>
                                 </tbody>
                             </table>
