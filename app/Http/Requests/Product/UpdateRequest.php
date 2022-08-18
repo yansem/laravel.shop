@@ -32,6 +32,7 @@ class UpdateRequest extends FormRequest
             'count' => 'required|integer',
             'preview_image' => 'nullable|file',
             'category_id' => 'nullable|integer',
+            'group_id' => 'nullable|integer',
             'tags' => 'nullable|array',
             'colors' => 'nullable|array',
         ];

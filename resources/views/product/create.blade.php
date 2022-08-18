@@ -67,6 +67,16 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label>Group</label>
+                            <select class="form-control" name="category_id">
+                                <option disabled selected>Select a Group</option>
+                                @foreach($groups as $group)
+                                    <option {{ old('group_id') == $group->id ? 'selected' : '' }}
+                                            value="{{ $group->id }}">{{ $group->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Category</label>
                             <select class="form-control" name="category_id">
                                 <option disabled selected>Select a Category</option>
