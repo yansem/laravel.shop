@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/products', \App\Http\Controllers\API\Product\IndexController::class);
+Route::post('/products', \App\Http\Controllers\API\Product\IndexController::class);
+Route::get('/products/filters', \App\Http\Controllers\API\Product\FilterController::class);

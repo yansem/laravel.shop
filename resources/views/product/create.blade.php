@@ -68,7 +68,7 @@
                         </div>
                         <div class="form-group">
                             <label>Group</label>
-                            <select class="form-control" name="category_id">
+                            <select class="form-control" name="group_id">
                                 <option disabled selected>Select a Group</option>
                                 @foreach($groups as $group)
                                     <option {{ old('group_id') == $group->id ? 'selected' : '' }}
